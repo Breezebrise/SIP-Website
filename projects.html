@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects | Nicole Welch</title>
+<meta name="description" content="Hands-on network security labs and projects by Nicole Welch.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <nav class="nav">
+    <a class="brand" href="index.html">Nicole <span>Welch</span></a>
+    <ul>
+      <li><a class="link" href="index.html">Home</a></li>
+      <li><a class="link" href="sip.html">SIP</a></li>
+      <li><a class="link" href="boards.html">Boards</a></li>
+      <li><a class="link" href="projects.html" aria-current="page">Projects</a></li>
+      <li><a class="link" href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+<main>
+  <section class="hero">
+    <p class="eyebrow">Projects</p>
+    <h1>Hands-on work</h1>
+    <p class="lede">Labs and projects from my Network Security coursework. Most of these fed directly into the SIP, since the traffic analysis work is where the benchmarking idea came from.</p>
+  </section>
+
+  <h2>Network traffic analysis</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Zeek packet capture analysis</h3>
+      <p>Turned raw PCAPs into structured connection, DNS, HTTP, and file logs, then hunted through them for suspicious activity. This is the traditional pipeline in my SIP.</p>
+      <div class="tags"><span class="tag">Zeek</span><span class="tag">PCAP</span></div>
+    </div>
+    <div class="card">
+      <h3>Brim investigations</h3>
+      <p>Confirmed a Cobalt Strike C2 channel from beaconing volume on port 443, found a secondary IcedID loader through Suricata signatures, and traced a cryptomining botnet using IRC traffic and computed byte totals.</p>
+      <div class="tags"><span class="tag">Brim</span><span class="tag">Zed queries</span><span class="tag">Suricata</span><span class="tag">MITRE ATT&amp;CK</span></div>
+    </div>
+    <div class="card">
+      <h3>Wireshark</h3>
+      <p>Packet-level inspection and filtering to understand protocols at the byte level before moving to log-based tools.</p>
+      <div class="tags"><span class="tag">Wireshark</span></div>
+    </div>
+  </div>
+
+  <h2>Enumeration and exploitation</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Post-compromise AD enumeration</h3>
+      <p>From a low-privilege domain account, mapped the domain, OU users, disabled host firewall, Defender detections, and a localhost-only service found through a service to PID to port pivot. Finished with an open DNS zone transfer against the domain controller.</p>
+      <div class="tags"><span class="tag">PowerShell</span><span class="tag">Active Directory</span><span class="tag">Defender</span></div>
+    </div>
+    <div class="card">
+      <h3>Web application attacks</h3>
+      <p>Reflected, stored, and DOM-based XSS, IDOR, SQL injection, and authentication bypass labs, with attention to why each fix works and not only how the exploit works.</p>
+      <div class="tags"><span class="tag">XSS</span><span class="tag">SQLi</span><span class="tag">IDOR</span></div>
+    </div>
+    <div class="card">
+      <h3>Incident response and C2</h3>
+      <p>Incident response fundamentals, command and control frameworks, and password attacks, covering both how attackers operate and how defenders catch them.</p>
+      <div class="tags"><span class="tag">Incident response</span><span class="tag">C2</span></div>
+    </div>
+  </div>
+
+  <h2>IoT and cloud</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>IoT firmware analysis</h3>
+      <p>Extracted and searched IoTGoat firmware with binwalk and firmwalker, and ran EMBA firmware scans on Azure virtual machines.</p>
+      <div class="tags"><span class="tag">binwalk</span><span class="tag">firmwalker</span><span class="tag">EMBA</span><span class="tag">Azure</span></div>
+    </div>
+    <div class="card">
+      <h3>Azure IAM and RBAC</h3>
+      <p>Configured identity and role-based access control in Azure, applying least privilege to users and resources.</p>
+      <div class="tags"><span class="tag">Azure</span><span class="tag">IAM</span><span class="tag">RBAC</span></div>
+    </div>
+  </div>
+</main>
+<footer><div>© 2026 Nicole Welch · Network Security, University of Advancing Technology</div></footer>
+</body>
+</html>

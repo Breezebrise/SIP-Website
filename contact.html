@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | Nicole Welch</title>
+<meta name="description" content="Contact Nicole Welch about her SIP or security projects.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <nav class="nav">
+    <a class="brand" href="index.html">Nicole <span>Welch</span></a>
+    <ul>
+      <li><a class="link" href="index.html">Home</a></li>
+      <li><a class="link" href="sip.html">SIP</a></li>
+      <li><a class="link" href="boards.html">Boards</a></li>
+      <li><a class="link" href="projects.html">Projects</a></li>
+      <li><a class="link" href="contact.html" aria-current="page">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+<main>
+  <section class="hero">
+    <p class="eyebrow">Contact</p>
+    <h1>Get in touch</h1>
+    <p class="lede">Questions about the benchmarking project, feedback on the site, or security work you want to talk through.</p>
+  </section>
+
+  <div class="grid" style="align-items:start">
+    <div class="card" id="contact" data-email="perilias@periliasdebrise.com">
+      <h3>Email</h3>
+      <p><a id="email-link" href="mailto:perilias@periliasdebrise.com">perilias@periliasdebrise.com</a></p>
+    </div>
+    <div class="card">
+      <h3>Send an inquiry</h3>
+      <form id="inquiry">
+        <label>Name<input name="name" required></label>
+        <label>Your email<input name="from" type="email" required></label>
+        <label>Subject<input name="subject" required></label>
+        <label>Message<textarea name="message" required></textarea></label>
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  </div>
+</main>
+<footer><div>© 2026 Nicole Welch · Network Security, University of Advancing Technology</div></footer>
+<script>
+  (function () {
+    var email = document.getElementById("contact").dataset.email;
+    var link = document.getElementById("email-link");
+    link.textContent = email;
+    link.href = "mailto:" + email;
+    document.getElementById("inquiry").addEventListener("submit", function (e) {
+      e.preventDefault();
+      var f = e.target;
+      var body = f.message.value + "\n\n" + f.name.value + "\n" + f.from.value;
+      location.href = "mailto:" + email + "?subject=" + encodeURIComponent(f.subject.value) + "&body=" + encodeURIComponent(body);
+    });
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SIP | Nicole Welch</title>
+<meta name="description" content="AI Efficiency Benchmarking for Cybersecurity Analysis, a Student Innovation Project by Nicole Welch.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <nav class="nav">
+    <a class="brand" href="index.html">Nicole <span>Welch</span></a>
+    <ul>
+      <li><a class="link" href="index.html">Home</a></li>
+      <li><a class="link" href="sip.html" aria-current="page">SIP</a></li>
+      <li><a class="link" href="boards.html">Boards</a></li>
+      <li><a class="link" href="projects.html">Projects</a></li>
+      <li><a class="link" href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+<main>
+  <section class="hero">
+    <p class="eyebrow">Student Innovation Project</p>
+    <h1>AI Efficiency Benchmarking for Cybersecurity Analysis</h1>
+    <p class="lede">A tool that tests whether AI in security analysis actually earns the energy it uses.</p>
+  </section>
+
+  <h2>Innovation claim</h2>
+  <div class="claim">This framework runs the same network traffic through an AI pipeline and a traditional rule-based pipeline, then scores both on detection accuracy, false positive rate, processing time, and carbon emissions. Nothing currently available compares AI and non-AI security analysis on accuracy and environmental cost side by side, so security teams are adopting AI tools without evidence that the tradeoff is worth it.</div>
+
+  <h2>Project description</h2>
+  <p>AI is being built into security products as a default feature. Vendors advertise better detection, but nobody publishes what that detection costs in compute and emissions, or whether a well-tuned traditional tool would have caught the same traffic. SOC teams end up paying for AI they can't evaluate, and junior analysts lose the hands-on reps that build real skill.</p>
+  <p>My project answers the question directly. The tool takes a labeled packet capture and runs it through two pipelines. One uses Zeek with detection rules, the way many SOCs already work. The other uses a machine learning classifier built with scikit-learn. Both pipelines are wrapped with CodeCarbon, which measures the energy used and estimates emissions in kilograms of CO2 equivalent. The output is a single comparison report that shows what each approach caught, what it got wrong, how long it took, and what it cost to run.</p>
+  <p>The goal is a benchmark any security team can rerun on their own traffic before deciding whether an AI tool belongs in their stack.</p>
+
+  <h2>How it works</h2>
+  <div class="diagram" role="img" aria-label="Diagram: a labeled PCAP feeds two pipelines, Zeek with rules and a scikit-learn classifier, both measured by CodeCarbon, which feed a comparison report of accuracy, false positive rate, time, and emissions.">
+    <svg viewBox="0 0 760 300" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, sans-serif">
+      <defs>
+        <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+          <path d="M0,0 L10,5 L0,10 z" fill="var(--muted)"/>
+        </marker>
+      </defs>
+      <rect x="10" y="115" width="130" height="70" rx="12" fill="var(--accent-soft)" stroke="var(--accent)"/>
+      <text x="75" y="145" text-anchor="middle" font-size="15" font-weight="700" fill="var(--ink)">Labeled PCAP</text>
+      <text x="75" y="166" text-anchor="middle" font-size="12" fill="var(--muted)">same input</text>
+
+      <rect x="190" y="20" width="330" height="260" rx="16" fill="none" stroke="var(--accent)" stroke-dasharray="6 5"/>
+      <text x="355" y="44" text-anchor="middle" font-size="13" font-weight="700" fill="var(--accent)">CodeCarbon measures both</text>
+
+      <rect x="220" y="65" width="270" height="80" rx="12" fill="var(--surface)" stroke="var(--line)"/>
+      <text x="355" y="97" text-anchor="middle" font-size="15" font-weight="700" fill="var(--ink)">Traditional pipeline</text>
+      <text x="355" y="120" text-anchor="middle" font-size="12" fill="var(--muted)">Zeek logs + detection rules</text>
+
+      <rect x="220" y="175" width="270" height="80" rx="12" fill="var(--surface)" stroke="var(--line)"/>
+      <text x="355" y="207" text-anchor="middle" font-size="15" font-weight="700" fill="var(--ink)">AI pipeline</text>
+      <text x="355" y="230" text-anchor="middle" font-size="12" fill="var(--muted)">scikit-learn classifier</text>
+
+      <rect x="570" y="85" width="180" height="130" rx="12" fill="var(--accent-soft)" stroke="var(--accent)"/>
+      <text x="660" y="113" text-anchor="middle" font-size="15" font-weight="700" fill="var(--ink)">Comparison report</text>
+      <text x="660" y="138" text-anchor="middle" font-size="12" fill="var(--muted)">Detection accuracy</text>
+      <text x="660" y="157" text-anchor="middle" font-size="12" fill="var(--muted)">False positive rate</text>
+      <text x="660" y="176" text-anchor="middle" font-size="12" fill="var(--muted)">Processing time</text>
+      <text x="660" y="195" text-anchor="middle" font-size="12" fill="var(--muted)">kg CO2eq</text>
+
+      <path d="M140 140 C170 140, 180 105, 218 105" fill="none" stroke="var(--muted)" stroke-width="2" marker-end="url(#arr)"/>
+      <path d="M140 160 C170 160, 180 215, 218 215" fill="none" stroke="var(--muted)" stroke-width="2" marker-end="url(#arr)"/>
+      <path d="M490 105 C530 105, 535 135, 568 135" fill="none" stroke="var(--muted)" stroke-width="2" marker-end="url(#arr)"/>
+      <path d="M490 215 C530 215, 535 170, 568 170" fill="none" stroke="var(--muted)" stroke-width="2" marker-end="url(#arr)"/>
+    </svg>
+  </div>
+
+  <h2>Tools and skills</h2>
+  <div class="tags">
+    <span class="tag">Python</span><span class="tag">Zeek</span><span class="tag">scikit-learn</span>
+    <span class="tag">CodeCarbon</span><span class="tag">PCAP analysis</span><span class="tag">Suricata</span>
+    <span class="tag">Data visualization</span>
+  </div>
+  <p>Budget is zero. Every tool in the build is open source.</p>
+
+  <h2>Prior art</h2>
+  <table>
+    <tr><th>Existing work</th><th>What it does</th><th>What's missing</th></tr>
+    <tr><td>CodeCarbon</td><td>Tracks emissions from running code</td><td>No comparison between AI and non-AI methods</td></tr>
+    <tr><td>NIST AI Risk Management Framework</td><td>Guides organizations on AI risk</td><td>Doesn't address environmental cost</td></tr>
+    <tr><td>MLCommons Power</td><td>Benchmarks machine learning energy efficiency</td><td>Doesn't test against traditional security tools</td></tr>
+  </table>
+
+  <h2>Timeline</h2>
+  <div class="timeline">
+    <div class="card"><strong>SIP311</strong><p>Fall 2026. Project plan, pitch, SME review, and early proof of concept.</p></div>
+    <div class="card"><strong>SIP408</strong><p>Spring 2027. Functional prototype running both pipelines on real traffic.</p></div>
+    <div class="card"><strong>SIP409</strong><p>Summer 2027. Final results, public write-up, and showcase.</p></div>
+  </div>
+
+  <h2>SIP Brief</h2>
+  <div class="card"><p>The SIP Brief will be posted here after Week 4.</p></div>
+
+  <h2>Code</h2>
+  <div class="card">
+    <p>Source code, test data notes, and results will be published in the project repository as the build progresses.</p>
+    <a class="more" id="repo-link" href="https://github.com/">View on GitHub →</a>
+  </div>
+</main>
+<footer><div>© 2026 Nicole Welch · Network Security, University of Advancing Technology</div></footer>
+<script>
+  // On GitHub Pages the host is <username>.github.io, so the repo link builds itself.
+  (function () {
+    var host = location.hostname;
+    if (host.endsWith(".github.io")) {
+      var user = host.replace(".github.io", "");
+      document.getElementById("repo-link").href = "https://github.com/" + user + "/sip-ai-efficiency-benchmark";
+    }
+  })();
+</script>
+</body>
+</html>
