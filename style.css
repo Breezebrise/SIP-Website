@@ -101,6 +101,15 @@ button {
 button:hover { filter: brightness(1.08); }
 footer { border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
 footer div { max-width: 980px; margin: 0 auto; padding: 24px 20px; }
+.gallery { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+.gallery figure { margin: 0; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
+.gallery img { width: 100%; aspect-ratio: 16/9; object-fit: cover; display: block; border-bottom: 1px solid var(--line); background: #fff; }
+.gallery figcaption { padding: 12px 16px; font-size: 15px; color: var(--muted); }
+.gallery figcaption strong { display: block; color: var(--ink); font-size: 16px; }
+.shot { width: 100%; border-radius: 14px; border: 1px solid var(--line); display: block; background: #fff; }
+.done { color: var(--accent); font-weight: 700; }
+.next { color: var(--muted); font-weight: 700; }
+pre.code { background: #111613; color: #cfe8d9; padding: 18px; border-radius: 12px; overflow-x: auto; font-size: 14px; line-height: 1.5; }
 @media (max-width: 600px) {
   .timeline .card { grid-template-columns: 1fr; gap: 4px; }
   ol.objectives li { padding-left: 22px; padding-top: 60px; }

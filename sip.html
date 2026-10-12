@@ -72,6 +72,10 @@
     </svg>
   </div>
 
+  <h2>Design-phase prototype</h2>
+  <p>Running one command processes a labeled capture through both pipelines and produces a single report. The values below are zeroed because this is a layout mockup. Real results come from the working build in SIP408.</p>
+  <img class="shot" src="images/prototype-report.png" alt="Design mockup of the benchmark report next to the command that produces it">
+
   <h2>Tools and skills</h2>
   <div class="tags">
     <span class="tag">Python</span><span class="tag">Zeek</span><span class="tag">scikit-learn</span>
@@ -95,25 +99,42 @@
     <div class="card"><strong>SIP409</strong><p>Summer 2027. Final results, public write-up, and showcase.</p></div>
   </div>
 
-  <h2>SIP Brief</h2>
-  <div class="card"><p>The SIP Brief will be posted here after Week 4.</p></div>
+  <h2>Progress</h2>
+  <table>
+    <tr><th>Milestone</th><th>Status</th></tr>
+    <tr><td>Project concept and problem statement</td><td class="done">Complete</td></tr>
+    <tr><td>SIP pitch deck</td><td class="done">Complete</td></tr>
+    <tr><td>SIP website</td><td class="done">Complete</td></tr>
+    <tr><td>Innovation Brief, Part 1</td><td class="done">Complete</td></tr>
+    <tr><td>Design-phase prototype and report mockup</td><td class="done">Complete</td></tr>
+    <tr><td>Proof-of-concept script</td><td class="done">Complete</td></tr>
+    <tr><td>Functional prototype on real traffic (SIP408)</td><td class="next">Next</td></tr>
+    <tr><td>Final results and showcase (SIP409)</td><td class="next">Planned</td></tr>
+  </table>
+
+  <h2>Project documents</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>SIP Innovation Brief, Part 1</h3>
+      <p>Technical field, background, annotated prior art, project description, innovation claim, and usage scenario.</p>
+      <a class="more" href="docs/Welch_Nicole_SIP_Innovation_Brief_Part1.docx">Download brief →</a>
+    </div>
+    <div class="card">
+      <h3>SIP Pitch Deck</h3>
+      <p>Problem, innovation claim, technical expertise, scope, target market, prior art, and prototype.</p>
+      <a class="more" href="docs/Welch_Nicole_SIP311_Pitch.pptx">Download deck →</a>
+    </div>
+  </div>
 
   <h2>Code</h2>
+  <p>The proof-of-concept script runs labeled flow data through a rule-based pipeline and a Random Forest classifier, wraps each one in a CodeCarbon tracker, and prints accuracy, false positive rate, time, energy, emissions, and energy per true positive for both. The rule-based pipeline stands in for Zeek detection rules until the full Zeek integration in SIP408.</p>
+  <pre class="code">python benchmark.py --data flows.csv</pre>
   <div class="card">
-    <p>Source code, test data notes, and results will be published in the project repository as the build progresses.</p>
-    <a class="more" id="repo-link" href="https://github.com/">View on GitHub →</a>
+    <h3>benchmark.py</h3>
+    <p>Python, pandas, scikit-learn, CodeCarbon</p>
+    <a class="more" href="https://github.com/Breezebrise/SIP-Website/blob/main/code/benchmark.py">View code on GitHub →</a>
   </div>
 </main>
 <footer><div>© 2026 Nicole Welch · Network Security, University of Advancing Technology</div></footer>
-<script>
-  // On GitHub Pages the host is <username>.github.io, so the repo link builds itself.
-  (function () {
-    var host = location.hostname;
-    if (host.endsWith(".github.io")) {
-      var user = host.replace(".github.io", "");
-      document.getElementById("repo-link").href = "https://github.com/" + user + "/sip-ai-efficiency-benchmark";
-    }
-  })();
-</script>
 </body>
 </html>
